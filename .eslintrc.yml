@@ -25,6 +25,7 @@ ignorePatterns: ["*.test.*", "node_modules/"]
 rules:
   space-before-function-paren: 2
   brace-style: [2, 'stroustrup']
+  '@typescript-eslint/brace-style': [2, 'stroustrup']
   arrow-body-style: 0
   no-underscore-dangle: 0
   class-methods-use-this: 1

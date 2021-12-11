@@ -8,3 +8,4 @@ coverage-ts/
 cypress/videos
 .parcel-cache/
 .cache/
+coverage/
