@@ -1,5 +1,5 @@
-describe('Basic Test', () => {
-  it('Visits the page', () => {
+describe('basic-test', () => {
+  it('fills-data', () => {
     cy.visit('/#testy');
     cy.get('#form-input').type('toast{enter}');
     cy.get('#form-input').type('tents{enter}');

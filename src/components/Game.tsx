@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 
 import WordType from '../types/WordType';
@@ -22,9 +23,9 @@ function Game({ word }: { word: WordType; }) {
   const hasWon = guesses.length > 1 && convertToString(prevGuess) === convertToString(word);
   return (
     <>
-      {guesses?.map((guess) => (
-        <StyledWord>
-          {guess.map(({ char, isGuess }) => <Letter isGuess={isGuess} char={char} />)}
+      {guesses?.map((guess, guessIndex) => (
+        <StyledWord key={guessIndex}>
+          {guess.map(({ char, isGuess }, index) => <Letter key={`form-${guessIndex}${char || 'null'}${index}`} isGuess={isGuess} char={char} />)}
         </StyledWord>
       ))}
       <StyledForm>
