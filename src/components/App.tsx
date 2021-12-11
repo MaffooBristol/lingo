@@ -5,6 +5,7 @@ import getRandomWord from '../functions/getRandomWord';
 import convertToObject from '../functions/convertToObject';
 
 import Game from './Game';
+import StyledLayout from './__styled__/StyledLayout';
 
 function App({ dictionary }: { dictionary: string[] }) {
   let chosenWord;
@@ -16,9 +17,10 @@ function App({ dictionary }: { dictionary: string[] }) {
     chosenWord = getRandomWord(words);
   }
   return (
-    <div>
+    <StyledLayout>
+      <h1>Lingo!</h1>
       <Game word={convertToObject(chosenWord)} />
-    </div>
+    </StyledLayout>
   );
 }
 
