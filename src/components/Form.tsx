@@ -49,7 +49,7 @@ function Form({ word, onSubmit }: { word: WordType; onSubmit: (word: WordType) =
           ...convertToObject(input),
           ...(Array(word.length - input.length).fill({ char: null }) as WordType),
         ].map(({ char }, index) => (
-          <Letter key={`form-${char || 'null'}${index}`} char={char} />
+          <Letter key={`form-${char || 'null'}${index}`} isInput char={char} isFocused={index === input.length} />
         ))}
       </StyledWord>
       <StyledButton disabled={!canSubmit} type="submit">Submit</StyledButton>
