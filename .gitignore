@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.swp
+*.ORIG
+*.REMOTE
+.cache/
+coverage-ts/
+cypress/videos
+.parcel-cache/
+.cache/

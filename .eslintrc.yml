@@ -1,0 +1,78 @@
+plugins:
+  - react
+  - '@typescript-eslint'
+  - '@typescript-eslint/eslint-plugin'
+  - cypress
+  - jest
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/eslint-recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-requiring-type-checking
+  - plugin:react/recommended
+  - plugin:react-hooks/recommended
+  - plugin:jest/recommended
+  - airbnb
+  - airbnb-typescript
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 12
+  sourceType: module
+  project: ['tsconfig.json']
+ignorePatterns: ["*.test.*", "node_modules/"]
+rules:
+  space-before-function-paren: 2
+  brace-style: [2, 'stroustrup']
+  arrow-body-style: 0
+  no-underscore-dangle: 0
+  class-methods-use-this: 1
+  consistent-return: 0
+  '@typescript-eslint/no-unused-vars': 1
+  no-bitwise: 0
+  no-plusplus: 0
+  linebreak-style: 0
+  arrow-parens: [2, 'always']
+  no-useless-escape: 0
+  curly: [2, 'all']
+  no-lonely-if: 1
+  semi: 2
+  max-len: [1, { code: 120, ignoreComments: true }]
+  prefer-destructuring: 1
+  lines-between-class-members: 0
+  object-curly-newline: 0
+  indent: 2
+  jsx-a11y/anchor-is-valid: [ 'error', {
+    components: [ 'Link' ],
+    specialLink: [ 'to' ]
+  }]
+  jsx-a11y/click-events-have-key-events: 0
+  jsx-a11y/no-static-element-interactions: 0
+  jsx-a11y/no-noninteractive-tabindex: 0
+  react/prefer-stateless-function: 1
+  react/no-unused-state: 1
+  react/state-in-constructor: [1, "never"]
+  react/jsx-one-expression-per-line: 0
+  react/prop-types: 0
+  react/jsx-indent: 1
+  react/jsx-props-no-spreading: 0
+  import/no-extraneous-dependencies: ["error", {"devDependencies": ["test/**/*.js", "**/*.test.js", "**/*.test.jsx", "**/setupTests.js"]}]
+  jsx-a11y/label-has-associated-control: [ 2, {
+    depth: 1,
+  }]
+  react/forbid-component-props: ["warn", {"forbid": ["style", "className"]}]
+  react/forbid-dom-props: ["warn", {"forbid": ["style", "className"]}]
+  react/jsx-sort-props: ["error", {"callbacksLast": true, "reservedFirst": true, "shorthandFirst": true, "noSortAlphabetically": true}]
+  id-blacklist: [1, "data", "err", "e", "cb", "callback", "response"]
+  react-redux/prefer-separate-component-file: 0
+  react-hooks/rules-of-hooks: 2
+  react-hooks/exhaustive-deps: 1
+  import/prefer-default-export: 0
+  import/no-absolute-path: 0
+  max-lines: [1, 300]
+  react/no-unescaped-entities: ["error", {"forbid": [">", "}"]}]
+env:
+  browser: true
+  es2021: true
+  jest/globals: true
