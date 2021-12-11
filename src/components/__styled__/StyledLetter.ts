@@ -62,6 +62,7 @@ const StyledLetter = styled.div`
   border-radius: 6px;
   transition: 0.1s ease-in-out all;
   text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
   ${letterStateStyle}
 `;
 

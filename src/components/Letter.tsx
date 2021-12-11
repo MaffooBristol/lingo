@@ -17,7 +17,7 @@ function Letter({ char, isInput, isGuess, isFocused }: LetterType) {
       $isFocused={isFocused}
       // $isInput={isInput}
     >
-      {char?.toUpperCase()}
+      {char?.toLowerCase()}
     </StyledLetter>
   );
 }

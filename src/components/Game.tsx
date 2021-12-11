@@ -24,7 +24,7 @@ function Game({ word }: { word: WordType; }) {
   return (
     <>
       {guesses?.map((guess, guessIndex) => (
-        <StyledWord key={guessIndex}>
+        <StyledWord key={guessIndex} className={guessIndex === guesses.length - 1 ? 'latest-guess' : 'prev-guess'}>
           {guess.map(({ char, isGuess }, index) => <Letter key={`form-${guessIndex}${char || 'null'}${index}`} isGuess={isGuess} char={char} />)}
         </StyledWord>
       ))}

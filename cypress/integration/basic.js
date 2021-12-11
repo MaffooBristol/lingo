@@ -8,5 +8,6 @@ describe('basic-test', () => {
     cy.screenshot();
     cy.get('#form-input').type('{enter}');
     cy.contains('won');
+    cy.get('.latest-guess').should('have.text', 'testy');
   });
 });
