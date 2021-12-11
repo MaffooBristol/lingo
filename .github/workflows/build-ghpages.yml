@@ -1,0 +1,26 @@
+name: Build static for Github Pages
+
+on:
+  push:
+    branches: [ main, master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Delete old
+        run: rm -rf ./docs/
+      - name: Build gh-pages
+        run: npm run build:gh-pages
+      - uses: EndBug/add-and-commit@v7
+        with:
+          default_author: github_actions
+          add: 'docs'
+          # remove: './docs'
