@@ -2,9 +2,10 @@
   "name": "lingo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "docs/index.html",
   "scripts": {
     "watch": "npx parcel src/index.html",
+    "build": "npx parcel build --dist-dir docs/ src/index.html",
     "test:check": "tsc --noEmit",
     "test:cypress": "start-server-and-test \"npx parcel --port 9999 src/index.html\" http://localhost:9999 \"cypress run\"",
     "test:lint": "eslint src",
