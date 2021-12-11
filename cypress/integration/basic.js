@@ -4,7 +4,9 @@ describe('Basic Test', () => {
     cy.get('#form-input').type('toast{enter}');
     cy.get('#form-input').type('tents{enter}');
     cy.get('#form-input').type('tests{enter}');
-    cy.get('#form-input').type('testy{enter}');
+    cy.get('#form-input').type('testy');
+    cy.screenshot();
+    cy.get('#form-input').type('{enter}');
     cy.contains('won');
   });
 });
