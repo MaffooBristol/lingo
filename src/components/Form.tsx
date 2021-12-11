@@ -8,6 +8,7 @@ import Letter from './Letter';
 
 import StyledHiddenInput from './__styled__/StyledHiddenInput';
 import StyledWord from './__styled__/StyledWord';
+import StyledButton from './__styled__/StyledButton';
 
 function Form({ word, onSubmit }: { word: WordType; onSubmit: (word: WordType) => void; }) {
   const [input, setInput] = useState('');
@@ -24,6 +25,7 @@ function Form({ word, onSubmit }: { word: WordType; onSubmit: (word: WordType) =
     >
       <StyledHiddenInput
         autoFocus
+        autoComplete="off"
         type="text"
         value={input}
         id="form-input"
@@ -49,7 +51,7 @@ function Form({ word, onSubmit }: { word: WordType; onSubmit: (word: WordType) =
           <Letter char={char} />
         ))}
       </StyledWord>
-      {canSubmit && <button type="submit">Submit</button>}
+      <StyledButton disabled={!canSubmit} type="submit">Submit</StyledButton>
     </form>
   );
 }
