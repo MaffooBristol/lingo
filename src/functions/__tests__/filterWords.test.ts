@@ -11,7 +11,7 @@ const words = [
 ];
 
 describe('filterWords', () => {
-  it('should convert', () => {
+  it('should filter', () => {
     // Returns the entire list.
     expect(filterWords(words, {})).toHaveLength(7);
     // Ignores "dvds" since it is only consonants.

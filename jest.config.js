@@ -23,4 +23,24 @@ module.exports = {
     'src/**/*.{js,jsx,ts,tsx}',
     '!**/node_modules/**',
   ],
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
+    'src/**/*.{jsx,tsx}': {
+      branches: 0,
+      functions: 0,
+      lines: 0,
+      statements: 0,
+    },
+    '**/__styled__/**': {
+      branches: 0,
+      functions: 0,
+      lines: 0,
+      statements: 0,
+    },
+  },
 };
