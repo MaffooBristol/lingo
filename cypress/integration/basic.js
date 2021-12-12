@@ -5,7 +5,7 @@ describe('basic-test', () => {
     cy.get('#form-input').type('tents{enter}');
     cy.get('#form-input').type('tests{enter}');
     cy.get('#form-input').type('testy');
-    cy.screenshot();
+    cy.screenshot('basic-test-fills-data');
     cy.get('#form-input').type('{enter}');
     cy.contains('won');
     cy.get('.latest-guess').should('have.text', 'testy');
