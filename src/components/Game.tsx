@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 import WordType from '../types/WordType';
 
-import matchChars from '../functions/matchChars';
 import convertToString from '../functions/convertToString';
+import getAcceptedGuess from '../functions/getAcceptedGuess';
 
 import Form from './Form';
 import Letter from './Letter';
@@ -30,30 +30,12 @@ function Game({ word }: { word: WordType; }) {
       ))}
       <StyledForm>
         {hasWon ? (
-          <div>You have won! Well done bruh</div>
+          <div>You have won!</div>
         ) : (
           <Form
             word={word}
             onSubmit={(guess: WordType) => {
-              const accepted = Array(word.length).fill({ char: null });
-              for (let i = 0; i < word.length; i++) {
-                if (matchChars(word[i], guess[i])) {
-                  accepted[i] = word[i];
-                }
-                else if (matchChars(word[i], prevGuess[i])) {
-                  accepted[i] = prevGuess[i];
-                }
-                else {
-                  for (let j = 0; j < guess.length; j++) {
-                    if (i !== j && (!prevGuess[j].char || prevGuess[j].isGuess) && matchChars(guess[j], word[i])) {
-                      accepted[j] = {
-                        ...guess[j],
-                        isGuess: true,
-                      };
-                    }
-                  }
-                }
-              }
+              const accepted = getAcceptedGuess(word, prevGuess, guess);
               setGuesses((prevGuesses) => [...prevGuesses, accepted]);
             }}
           />
