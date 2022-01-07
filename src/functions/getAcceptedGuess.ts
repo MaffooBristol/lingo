@@ -8,7 +8,7 @@ function getAcceptedGuess(word: WordType, prevGuess: WordType, guess: WordType) 
     if (matchChars(word[i], guess[i])) {
       accepted[i] = word[i];
     }
-    else if (matchChars(word[i], prevGuess[i])) {
+    else if (matchChars(word[i], prevGuess[i]) && !prevGuess[i].isGuess) {
       accepted[i] = prevGuess[i];
     }
     else {
