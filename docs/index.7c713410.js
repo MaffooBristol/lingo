@@ -46,7 +46,7 @@
     height: 2.9rem;
     background: transparent;
   `}}
-`;function fg({char:e,isInput:t,isGuess:n,isFocused:r}){return ge.createElement(pg,{$isGuess:n,$isAnswered:null!==e,$isFocused:r},e?.toLowerCase?.())}fg.propTypes={char:pf.string.isRequired,isInput:pf.bool,isGuess:pf.bool,isFocused:pf.bool},fg.defaultProps={isInput:!1,isGuess:!1,isFocused:!1};const mg=dg.input`
+`;function fg({char:e,isInput:t,isGuess:n,isFocused:r}){return ge.createElement(pg,{$isGuess:n,$isAnswered:null!==e,$isFocused:r,className:n?"is-guess":"not-guess"},e?.toLowerCase?.())}fg.propTypes={char:pf.string.isRequired,isInput:pf.bool,isGuess:pf.bool,isFocused:pf.bool},fg.defaultProps={isInput:!1,isGuess:!1,isFocused:!1};const mg=dg.input`
   height: 0;
   width: 0;
   opacity: 0;
@@ -82,7 +82,7 @@
   padding-top: 2rem;
   border-top: 1px solid #ddd;
   margin-top: 3rem;
-`;function vg({word:e}){const[t,n]=be().useState([[e[0],...Array(e.length-1).fill({char:null})]]),r=t[t.length-1],a=t.length>1&&ep(r)===ep(e);return ge.createElement(ge.Fragment,null,t?.map?.(((e,n)=>ge.createElement(hg,{key:n,className:n===t.length-1?"latest-guess":"prev-guess"},e.map((({char:e,isGuess:t},r)=>ge.createElement(fg,{key:`form-${n}${e||"null"}${r}`,isGuess:t,char:e})))))),ge.createElement(bg,null,a?ge.createElement("div",null,"You have won!"):ge.createElement(yg,{word:e,onSubmit:t=>{const a=function(e,t,n){const r=Array(e.length).fill({char:null});for(let a=0;a<e.length;a++)if(tp(e[a],n[a]))r[a]=e[a];else if(tp(e[a],t[a])&&!t[a].isGuess)r[a]=t[a];else for(let i=0;i<n.length;i++)a===i||t[i].char&&!t[i].isGuess||!tp(n[i],e[a])||(r[i]={...n[i],isGuess:!0});return r}(e,r,t);n((e=>[...e,a]))}})))}var wg=dg.div`
+`;function vg({word:e}){const[t,n]=be().useState([[e[0],...Array(e.length-1).fill({char:null})]]),r=t[t.length-1],a=t.length>1&&ep(r)===ep(e);return ge.createElement(ge.Fragment,null,t?.map?.(((e,n)=>ge.createElement(hg,{key:n,className:n===t.length-1?"latest-guess":"prev-guess"},e.map((({char:e,isGuess:t},r)=>ge.createElement(fg,{key:`form-${n}${e||"null"}${r}`,isGuess:t,char:e})))))),ge.createElement(bg,null,a?ge.createElement("div",null,"You have won!"):ge.createElement(yg,{word:e,onSubmit:t=>{const a=function(e,t,n){const r=Array(e.length).fill({char:null});for(let a=0;a<e.length;a++)if(tp(e[a],n[a]))tp(e[a],t[a])&&!t[a].isGuess?r[a]=t[a]:r[a]=e[a];else for(let i=0;i<n.length;i++)a===i||t[i].char&&!t[i].isGuess||!tp(n[i],e[a])||(r[i]={...n[i],isGuess:!r[i].char});return r}(e,r,t);n((e=>[...e,a]))}})))}var wg=dg.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,4 +90,4 @@
     max-width: 20rem;
   }
 `;function kg({dictionary:e}){let t;if(window?.location?.hash)t=window.location.hash.replace("#","");else{t=function(e){return e[Math.floor(Math.random()*e.length)]}(function(e,t){const{length:n=null,startLetter:r=null,filterOnlyConsonants:a=!1}=t;return e.filter((e=>!n||e.length===n)).filter((e=>!r||e.toLowerCase()[0]===r.toLowerCase())).filter((e=>!a||e.split("").some((e=>Zd.indexOf(e)>-1))))}(e,{length:5,filterOnlyConsonants:!0}))}return ge.createElement(wg,null,ge.createElement("h1",null,"Lingo!"),ge.createElement(vg,{word:Jd(t)}))}Kd.render(ge.createElement(kg,{dictionary:Xd}),document.getElementById("root"))}();
-//# sourceMappingURL=index.faf65bd8.js.map
+//# sourceMappingURL=index.7c713410.js.map
