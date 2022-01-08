@@ -18,7 +18,7 @@ describe('getAcceptedGuess', () => {
   });
   it('should be close with prev guess', () => {
     const accepted = getAcceptedGuess(convertToObject('testy'), convertToObject('tents'), convertToObject('tilts'));
-    expect(accepted).toEqual(convertToObject('te_t_'));
+    expect(accepted).toEqual(convertToObject('t__t_'));
   });
   it('should be close with prev guess swapsies', () => {
     const accepted = getAcceptedGuess(convertToObject('speed'), convertToObject('s____'), convertToObject('super'));
