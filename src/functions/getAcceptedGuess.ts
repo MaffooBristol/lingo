@@ -7,11 +7,9 @@ function getAcceptedGuess(word: WordType, prevGuess: WordType, guess: WordType) 
   for (let i = 0; i < word.length; i++) {
     if (matchChars(word[i], guess[i])) {
       if (matchChars(word[i], prevGuess[i]) && !prevGuess[i].isGuess) {
-        console.log(`Previous guessed ${word[i].char || ''} to ${prevGuess[i].char || ''}`);
         accepted[i] = prevGuess[i];
       }
       else {
-        console.log(`Matched ${word[i].char || ''} to ${guess[i].char || ''}`);
         accepted[i] = word[i];
       }
     }
