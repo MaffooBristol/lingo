@@ -9,14 +9,14 @@ import StyledLetter from './__styled__/StyledLetter';
 //   // 97-122
 //   return String.fromCharCode(97 + Math.floor(Math.random() * 26));
 // }
-function Letter({ char, isInput, isGuess, isFocused }: LetterType) {
+function Letter({ char, isInput, isNear, isFocused }: LetterType) {
   return (
     <StyledLetter
-      $isGuess={isGuess}
+      $isNear={isNear}
       $isAnswered={char !== null}
       $isFocused={isFocused}
       // $isInput={isInput}
-      className={isGuess ? 'is-guess' : 'not-guess'}
+      className={isNear ? 'is-near' : 'not-near'}
     >
       {char?.toLowerCase()}
     </StyledLetter>
@@ -26,13 +26,13 @@ function Letter({ char, isInput, isGuess, isFocused }: LetterType) {
 Letter.propTypes = {
   char: PropTypes.string.isRequired,
   isInput: PropTypes.bool,
-  isGuess: PropTypes.bool,
+  isNear: PropTypes.bool,
   isFocused: PropTypes.bool,
 };
 
 Letter.defaultProps = {
   isInput: false,
-  isGuess: false,
+  isNear: false,
   isFocused: false,
 };
 

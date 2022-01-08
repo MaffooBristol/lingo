@@ -6,7 +6,7 @@ function getAcceptedGuess(word: WordType, prevGuess: WordType, guess: WordType) 
   const accepted = Array(word.length).fill({ char: null }) as WordType;
   for (let i = 0; i < word.length; i++) {
     if (matchChars(word[i], guess[i])) {
-      if (matchChars(word[i], prevGuess[i]) && !prevGuess[i].isGuess) {
+      if (matchChars(word[i], prevGuess[i]) && !prevGuess[i].isNear) {
         accepted[i] = prevGuess[i];
       }
       else {
@@ -15,10 +15,10 @@ function getAcceptedGuess(word: WordType, prevGuess: WordType, guess: WordType) 
     }
     else {
       for (let j = 0; j < guess.length; j++) {
-        if (i !== j && (!prevGuess[j].char || prevGuess[j].isGuess) && matchChars(guess[j], word[i])) {
+        if (i !== j && (!prevGuess[j].char || prevGuess[j].isNear) && matchChars(guess[j], word[i])) {
           accepted[j] = {
             ...guess[j],
-            isGuess: !accepted[j].char,
+            isNear: !accepted[j].char,
           };
         }
       }

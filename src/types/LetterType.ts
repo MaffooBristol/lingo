@@ -1,7 +1,7 @@
 type LetterType = {
   char: string | null,
   isInput?: boolean,
-  isGuess?: boolean,
+  isNear?: boolean,
   isFocused?: boolean,
 };
 

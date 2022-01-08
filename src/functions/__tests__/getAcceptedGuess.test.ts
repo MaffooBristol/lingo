@@ -22,6 +22,6 @@ describe('getAcceptedGuess', () => {
   });
   it('should be close with prev guess swapsies', () => {
     const accepted = getAcceptedGuess(convertToObject('speed'), convertToObject('s____'), convertToObject('super'));
-    expect(accepted[2]).toEqual({ char: 'p', isGuess: true });
+    expect(accepted[2]).toEqual({ char: 'p', isNear: true });
   });
 });

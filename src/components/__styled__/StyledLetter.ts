@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-function letterStateStyle({ $isGuess = false, $isInput = false, $isAnswered = false, $isFocused = false }) {
+function letterStateStyle({ $isNear = false, $isInput = false, $isAnswered = false, $isFocused = false }) {
   if ($isFocused) {
     return css`
       @keyframes slidein {
@@ -24,7 +24,7 @@ function letterStateStyle({ $isGuess = false, $isInput = false, $isAnswered = fa
       box-shadow: 0 0 3px #acf, 0px 2px 2px inset rgba(255, 255, 255, 0.7);
     `;
   }
-  if ($isGuess) {
+  if ($isNear) {
     return css`
       background: #ffd;
       border-color: #664;
