@@ -9,3 +9,4 @@ cypress/videos
 .parcel-cache/
 .cache/
 coverage/
+*(failed).png

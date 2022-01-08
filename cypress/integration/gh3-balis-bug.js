@@ -13,7 +13,7 @@ describe('GitHub issue 3 yellow square bug', () => {
     cy.visit('/#speed');
     cy.get('#form-input').type('seeds{enter}');
     cy.contains('won').should('not.exist');
-    cy.get('.latest-guess .not-guess').eq(1).should('have.text', 'e');
-    cy.get('.latest-guess > *').eq(2).should('have.text', 'e').should('have.class', 'not-guess');
+    cy.get('.latest-guess .not-near').eq(1).should('have.text', 'e');
+    cy.get('.latest-guess > *').eq(2).should('have.text', 'e').should('have.class', 'not-near');
   });
 });
